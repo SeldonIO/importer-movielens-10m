@@ -20,6 +20,6 @@ cat <(echo "id") <(cat /movielens/data/ml-10M100K/ratings.dat | awk -F'::' '{pri
 #create actions csv file in correct format
 echo "create actions csv"
 echo "user_id,item_id,value,time" > /movielens/seldon/movielens_actions.csv
-cat /movielens/data/ml-10M100K/ratings.dat | awk -F"::" 'BEGIN{OFS=","}{print $1,$2,$3,"1",$4}' >>  /movielens/seldon/movielens_actions.csv
+cat /movielens/data/ml-10M100K/ratings.dat | awk -F"::" 'BEGIN{OFS=","}{print $1,$2,$3,$4}' >>  /movielens/seldon/movielens_actions.csv
 
 
